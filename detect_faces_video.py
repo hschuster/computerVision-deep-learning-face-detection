@@ -34,6 +34,7 @@ while True:
     # to have a maximum width of 400 pixels
     frame = vs.read()
     frame = imutils.resize(frame, width=400)
+    frameOgn = frame.copy()
 
     # grab the frame dimensions and convert it to a blob
     (h, w) = frame.shape[:2]
@@ -72,6 +73,8 @@ while True:
 
     # show the output frame
     cv2.imshow("Frame", frame)
+    cv2.imshow("FrameOgn", frameOgn)
+
     key = cv2.waitKey(1) & 0xFF
 
     # if the `q` key was pressed, break from the loop
